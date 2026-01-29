@@ -1,0 +1,61 @@
+:root {
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    transition: background 0.5s ease;
+}
+
+/* Landing Page Background Animation */
+#landing-page {
+    height: 100vh;
+    background: radial-gradient(circle, #1e293b 0%, #0f172a 100%);
+    position: relative;
+    z-index: 10;
+}
+
+.animated-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png');
+    opacity: 0.1;
+    animation: moveBg 20s linear infinite;
+}
+
+@keyframes moveBg {
+    from { background-position: 0 0; }
+    to { background-position: 500px 500px; }
+}
+
+/* Mouse Follower */
+.cursor-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: rgba(13, 110, 253, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+    z-index: 9999;
+}
+
+/* Skill Cards Hover */
+.skill-card {
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    border-color: #0d6efd;
+    box-shadow: 0 10px 30px rgba(13, 110, 253, 0.2) !important;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .display-1 { font-size: 3rem; }
+}
